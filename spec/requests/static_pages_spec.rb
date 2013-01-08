@@ -2,11 +2,13 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+  let (:base_title) {"MySalesGame Bulk Upload"}
+  
   describe "Home Page" do
   
     it "should have the right title" do
 		visit '/static_pages/home'
-		page.should have_selector('title', :text => "MySalesGame Bulk Upload | Home")
+		page.should have_selector('title', :text => "#{base_title} | Home")
 	end
   end
   
@@ -20,7 +22,7 @@ describe "StaticPages" do
 	
 	it "should have the right title" do
 		visit '/static_pages/help'
-		page.should have_selector('title', :text => "MySalesGame Bulk Upload | Help")
+		page.should have_selector('title', :text => "#{base_title} | Help")
 	end
   end
   
@@ -34,7 +36,7 @@ describe "StaticPages" do
 	
 	it "should have the right title" do
 		visit '/static_pages/about'
-		page.should have_selector('title', :text => "MySalesGame Bulk Upload | About")
+		page.should have_selector('title', :text => "#{base_title} | About")
 	end
   end
   
@@ -48,7 +50,7 @@ describe "StaticPages" do
 	
 	it "should have the right title" do
 		visit '/static_pages/contact'
-		page.should have_selector('title', :text => "MySalesGame Bulk Upload | Contact")
+		page.should have_selector('title', :text => "#{base_title} | Contact")
 	end
   end
 end
